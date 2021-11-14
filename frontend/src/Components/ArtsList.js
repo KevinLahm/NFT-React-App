@@ -24,7 +24,7 @@ const ArtsList = ({ getArts, arts }) => {
 const  handleDelete=(id) =>{
          let d = window.confirm("Are you sure you want to delete the art ?");
             if (d === true) {
-                 deleteArtWithDispatch(id)
+                 //deleteArtWithDispatch(id)
                 window.location.replace('http://localhost:3001/arts')
         }
     }

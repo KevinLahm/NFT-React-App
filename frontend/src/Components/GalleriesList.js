@@ -26,7 +26,7 @@ class GalleriesList extends React.Component {
             <div className="row">
                 {isLoading && <h1>Loading</h1>}
                 {error && (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                         Sorry! Encountered an error while fetching galleries.
                     </div>
                 )}
