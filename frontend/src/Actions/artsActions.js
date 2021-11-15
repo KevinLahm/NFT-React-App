@@ -52,26 +52,44 @@ const getAllArts = () => {
     }
 }
 
+const deleteArt = (artid) => {
+    const configObj = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }}
 
-export const deleteArts = (artid) => {
-    return (dispatch) => {
-        dispatch({ type: DELETE_ART });
+   fetch(`http://localhost:3001/arts/${artid}`, configObj)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response has an issue')
+            }
+        })
+}
 
-       fetch(`http://localhost:3000/arts/${artid}`, { method: "DELETE" })
+export const addArt = (userInput) => {
+    let _data = {
+        "name": userInput.name,
+        "price": userInput.price,
+        "description": userInput.description,
+        "gallery_id": userInput.gallery,
+    }
+    const configObj = {
+      method: 'POST',
+      headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+      },
+      body: JSON.stringify(_data)
+  }
+  
+  fetch(`http://localhost:3001/arts`, configObj)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response has an issue')
                 }
-                return response.json()
             })
-            .then((data) => dispatch({
-                type: DELETE_ART,
-                payload: {
-                    data
-                }
-            }))
-            
-    }
 }
 
-export{getArtsByGalleryId,getAllArts}
+export{getArtsByGalleryId,getAllArts, deleteArt}

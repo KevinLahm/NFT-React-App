@@ -13,7 +13,7 @@ const menuItems = [
 const Menu =()=>{
   return (
     <div className="row ">
-      <div className="col-md-8 offset-md-2 app">
+      <div className="col-md-12 app pb-4 mb-2">
         <ul className ="nav nav-pills">
 
           {menuItems.map(m => (
@@ -25,6 +25,7 @@ const Menu =()=>{
           ))} 
 
         </ul>
+        <hr/>
       </div>
     </div>)
   }
