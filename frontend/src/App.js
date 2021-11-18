@@ -13,7 +13,6 @@ class App extends Component {
     return (
       <div className ="container">
         <Menu/>
-
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='galleries' element={<GalleriesList />} />
@@ -21,7 +20,7 @@ class App extends Component {
           <Route path='arts' element={<ShowAllArts />} />
           <Route path='add-art' element={<AddArt/>} />
         </Routes>
-          <Footer/>
+        <Footer/>
       </div>
     );
   }
